@@ -13,6 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyPlayer-RTSP.NetSDK", "E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoPlayerForWpf", "VideoPlayerForWpf\VideoPlayerForWpf.csproj", "{C5369355-7991-4DFD-98D2-EC5846218AC0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assembly", "Assembly", "{DF6ABD3F-DDEA-4A06-881D-393C408872F9}"
+	ProjectSection(SolutionItems) = preProject
+		Assembly\Microsoft.Windows.Shell.dll = Assembly\Microsoft.Windows.Shell.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

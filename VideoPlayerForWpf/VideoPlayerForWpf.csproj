@@ -33,7 +33,16 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\app.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Expression.Drawing, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Expression.Drawing.3.0.0\lib\net45\Microsoft.Expression.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Windows.Shell">
+      <HintPath>..\Assembly\Microsoft.Windows.Shell.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -54,6 +63,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Themes\Controls\AnimatedContentControl.cs" />
+    <Compile Include="Themes\Controls\RoundedBox.xaml.cs">
+      <DependentUpon>RoundedBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Themes\Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Themes\Converters\LanguageToVisibilityConverter.cs" />
+    <Compile Include="Themes\Converters\MinusConverter.cs" />
+    <Compile Include="Themes\MercuriusDialog.cs" />
+    <Compile Include="Themes\MercuriusWindow.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -66,6 +84,90 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Themes\Commons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Controls\RoundedBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Button.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Calendar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\CheckBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\ComboBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\DataGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\DatePicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Dialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\ListBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\ListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\MenuItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Panel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\ScrollBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\StatusBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\TextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\TreeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Default\Window.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -85,6 +187,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -92,6 +195,87 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\add.png" />
+    <Resource Include="Resources\Images\avatar.png" />
+    <Resource Include="Resources\Images\bLine.png" />
+    <Resource Include="Resources\Images\cameraHead.png" />
+    <Resource Include="Resources\Images\cameraSwitching.png" />
+    <Resource Include="Resources\Images\close.png" />
+    <Resource Include="Resources\Images\close1234.png" />
+    <Resource Include="Resources\Images\collecAfter.png" />
+    <Resource Include="Resources\Images\collectAfter.png" />
+    <Resource Include="Resources\Images\collectBefore.png" />
+    <Resource Include="Resources\Images\collectBefore2.png" />
+    <Resource Include="Resources\Images\collectFalse.png" />
+    <Resource Include="Resources\Images\currentWin.png" />
+    <Resource Include="Resources\Images\currentWinAfter.png" />
+    <Resource Include="Resources\Images\fold.png" />
+    <Resource Include="Resources\Images\forword_1.png" />
+    <Resource Include="Resources\Images\hangup.png" />
+    <Resource Include="Resources\Images\hangup2.png" />
+    <Resource Include="Resources\Images\head.png" />
+    <Resource Include="Resources\Images\institutionList.png" />
+    <Resource Include="Resources\Images\liveLoading.gif" />
+    <Resource Include="Resources\Images\max.png" />
+    <Resource Include="Resources\Images\min.png" />
+    <Resource Include="Resources\Images\playlist.png" />
+    <Resource Include="Resources\Images\playlist_2.png" />
+    <Resource Include="Resources\Images\ptzDown.png" />
+    <Resource Include="Resources\Images\ptzDown2.png" />
+    <Resource Include="Resources\Images\ptzDownMax.png" />
+    <Resource Include="Resources\Images\ptzDownMax.png2.png" />
+    <Resource Include="Resources\Images\ptzLeft.png" />
+    <Resource Include="Resources\Images\ptzLeft2.png" />
+    <Resource Include="Resources\Images\ptzLeftMax.png" />
+    <Resource Include="Resources\Images\ptzLeftMax.png2.png" />
+    <Resource Include="Resources\Images\ptzRight.png" />
+    <Resource Include="Resources\Images\ptzRight2.png" />
+    <Resource Include="Resources\Images\ptzRightMax.png" />
+    <Resource Include="Resources\Images\ptzRightMax2.png" />
+    <Resource Include="Resources\Images\ptzTop.png" />
+    <Resource Include="Resources\Images\ptzTop2.png" />
+    <Resource Include="Resources\Images\ptzTopMax.png" />
+    <Resource Include="Resources\Images\ptzTopMax2.png" />
+    <Resource Include="Resources\Images\push.png" />
+    <Resource Include="Resources\Images\push2.png" />
+    <Resource Include="Resources\Images\redioClose.png" />
+    <Resource Include="Resources\Images\redioOpen.png" />
+    <Resource Include="Resources\Images\restor.png" />
+    <Resource Include="Resources\Images\restore.png" />
+    <Resource Include="Resources\Images\screen_four.png" />
+    <Resource Include="Resources\Images\screen_four_active.png" />
+    <Resource Include="Resources\Images\screen_nine.png" />
+    <Resource Include="Resources\Images\screen_nine_active.png" />
+    <Resource Include="Resources\Images\screen_six.png" />
+    <Resource Include="Resources\Images\screen_sixteen.png" />
+    <Resource Include="Resources\Images\screen_sixteen_active.png" />
+    <Resource Include="Resources\Images\screen_six_active.png" />
+    <Resource Include="Resources\Images\select.png" />
+    <Resource Include="Resources\Images\SysStateA.png" />
+    <Resource Include="Resources\Images\SysStateAText.png" />
+    <Resource Include="Resources\Images\SysStateB.png" />
+    <Resource Include="Resources\Images\SysStateBText.png" />
+    <Resource Include="Resources\Images\SysStateC.png" />
+    <Resource Include="Resources\Images\to_split.png" />
+    <Resource Include="Resources\Images\unfold.png" />
+    <Resource Include="Resources\Images\videoPcLogo.png" />
+    <Resource Include="Resources\Images\videoPcMax.png" />
+    <Resource Include="Resources\Images\videoPcPush.png" />
+    <Resource Include="Resources\Images\videoPlay.png" />
+    <Resource Include="Resources\Images\zoomIn.png" />
+    <Resource Include="Resources\Images\zoomIn2.png" />
+    <Resource Include="Resources\Images\zoomInMax.png" />
+    <Resource Include="Resources\Images\zoomInMax.png2.png" />
+    <Resource Include="Resources\Images\zoomOut.png" />
+    <Resource Include="Resources\Images\zoomOut2.png" />
+    <Resource Include="Resources\Images\zoomOutMax.png" />
+    <Resource Include="Resources\Images\zoomOutMax2.png" />
+    <Resource Include="Resources\Images\多画面9_03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\app.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

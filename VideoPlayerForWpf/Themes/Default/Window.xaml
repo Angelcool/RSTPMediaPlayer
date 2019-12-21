@@ -1,0 +1,281 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:VideoPlayerForWpf.Themes"
+                    xmlns:shell="clr-namespace:System.Windows;assembly=PresentationFramework"
+                    xmlns:shellex="http://schemas.microsoft.com/winfx/2006/xaml/presentation/shell">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Button.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!--  主窗体样式  -->
+    <Style x:Key="{x:Type controls:MercuriusWindow}" TargetType="controls:MercuriusWindow">
+        <Setter Property="Width" Value="1024" />
+        <Setter Property="Height" Value="768" />
+        <Setter Property="MinWidth" Value="800" />
+        <Setter Property="MinHeight" Value="640" />
+        <Setter Property="ResizeMode" Value="CanResizeWithGrip" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:MercuriusWindow">
+                    <Border x:Name="WindowBorder"
+                            Margin="{Binding Source={x:Static shellex:SystemParameters2.Current}, Path=WindowNonClientFrameThickness}"
+                            BorderBrush="#353535"
+                            BorderThickness="1"
+                            SnapsToDevicePixels="True">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                <GradientStop Offset="0" Color="#353535"/>
+                                <GradientStop Offset="1" Color="Black" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <AdornerDecorator>
+                            <AdornerDecorator.Effect>
+                                <DropShadowEffect BlurRadius="5"
+                                                  ShadowDepth="0"
+                                                  Color="Black" />
+                            </AdornerDecorator.Effect>
+                            <Grid x:Name="LayoutRoot">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="48" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <!--  标题栏  -->
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <!--  Icon图标  -->
+                                    <Border x:Name="icon" Width="26"
+                                            Height="26"
+                                            Margin="8,0,8,0">
+                                        <Image Source="{TemplateBinding Icon}" Stretch="Uniform" />
+                                    </Border>
+
+                                    <!--  标题  -->
+                                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                        <TextBlock x:Name="title"
+                                               Margin="0,0"
+                                               HorizontalAlignment="Stretch"
+                                               VerticalAlignment="Center"
+                                               FontSize="18"
+                                               FontFamily="黑体"
+                                               FontStretch="Medium"
+                                               FontStyle="Normal"
+                                               FontWeight="Bold"
+                                               Foreground="White"
+                                               Text="{TemplateBinding Title}" />
+                                        <TextBlock x:Name="subTitle"
+                                               Margin="15,0,0,5"
+                                               HorizontalAlignment="Stretch"
+                                               VerticalAlignment="Bottom"
+                                               FontSize="14"
+                                               FontFamily="宋体"
+                                               FontStretch="Normal"
+                                               FontStyle="Italic"
+                                               FontWeight="Bold"
+                                               Foreground="White"
+                                               Text="{TemplateBinding SubTitle}" />
+                                        <!-- 副标题 -->
+                                    </StackPanel>
+
+                                    <!--  Windows系统按钮  -->
+                                    <StackPanel Grid.Column="2"
+                                                Margin="0,2,3,0"
+                                                VerticalAlignment="Top"
+                                                Orientation="Horizontal"
+                                                shellex:WindowChrome.IsHitTestVisibleInChrome="True">
+                                        <Button Command="{Binding Source={x:Static shell:SystemCommands.MinimizeWindowCommand}}"
+                                                Style="{DynamicResource SystemButtonStyle}"
+                                                ToolTip="最小化">
+                                            <Button.Content>
+                                                <Grid Width="32"
+                                                      Height="32"
+                                                      RenderTransform="1,0,0,1,0,1">
+                                                    <Path Width="16"
+                                                          Height="16"
+                                                          Margin="0,0,0,0"
+                                                          Data="M0,0L53.333,0 53.333,8.888 0,8.888z"
+                                                          Fill="#FFFFFFFF"
+                                                          RenderTransformOrigin="0.5,0.5"
+                                                          Stretch="Uniform">
+                                                        <Path.RenderTransform>
+                                                            <TransformGroup>
+                                                                <TransformGroup.Children>
+                                                                    <RotateTransform Angle="0" />
+                                                                    <ScaleTransform ScaleX="1" ScaleY="1" />
+                                                                </TransformGroup.Children>
+                                                            </TransformGroup>
+                                                        </Path.RenderTransform>
+                                                    </Path>
+                                                </Grid>
+                                            </Button.Content>
+                                        </Button>
+                                        <Grid Margin="1,0,1,0">
+                                            <Button x:Name="Restore"
+                                                    Command="{Binding Source={x:Static shell:SystemCommands.RestoreWindowCommand}}"
+                                                    Style="{DynamicResource SystemButtonStyle}"
+                                                    ToolTip="还原"
+                                                    Visibility="Collapsed">
+                                                <Button.Content>
+                                                    <Grid Width="32"
+                                                          Height="32"
+                                                          RenderTransform="1,0,0,1,.5,.5"
+                                                          UseLayoutRounding="True">
+                                                        <Path Width="16"
+                                                              Height="16"
+                                                              Margin="0,0,0,0"
+                                                              Data="M13.319,13.211L19.988284,13.211 17.410151,15.789073 21.28,19.657282 19.604078,21.333 15.73563,17.464691 13.319,19.881272z M1.2917604,13.211L7.9610004,13.211 7.9610004,19.881272 5.544292,17.464691 1.6759129,21.333001 0,19.657283 3.8698997,15.789073z M19.604079,0L21.28,1.675642 17.410151,5.5439911 19.988283,8.1220002 13.319,8.1220002 13.319,1.4516525 15.73563,3.8682289z M1.6759129,0L5.544292,3.8682289 7.9610004,1.4516525 7.9610004,8.1220002 1.2917604,8.1220002 3.8698997,5.5439911 0,1.675642z"
+                                                              Fill="#FFFFFFFF"
+                                                              RenderTransformOrigin="0.5,0.5"
+                                                              Stretch="Uniform">
+                                                            <Path.RenderTransform>
+                                                                <TransformGroup>
+                                                                    <TransformGroup.Children>
+                                                                        <RotateTransform Angle="0" />
+                                                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                                                    </TransformGroup.Children>
+                                                                </TransformGroup>
+                                                            </Path.RenderTransform>
+                                                        </Path>
+                                                    </Grid>
+                                                </Button.Content>
+                                            </Button>
+                                            <Button x:Name="Maximize"
+                                                    Command="{Binding Source={x:Static shell:SystemCommands.MaximizeWindowCommand}}"
+                                                    Style="{DynamicResource SystemButtonStyle}"
+                                                    ToolTip="最大化">
+                                                <Button.Content>
+                                                    <Grid Width="32" Height="32">
+                                                        <Path Width="16"
+                                                              Height="16"
+                                                              Margin="0,0,0,0"
+                                                              Data="M14.830953,10.982001L18.833212,14.984314 21.333,12.484493 21.333,19.385 14.433286,19.385 17.10036,16.71719 13.098,12.714976z M6.5028391,10.982L8.2359996,12.714976 4.2332802,16.71719 6.9007497,19.384999 0,19.384999 0,12.484493 2.5001297,14.984314z M14.433286,0L21.333,0 21.333,6.9013147 18.833212,4.4012227 14.830952,8.404 13.098,6.6708961 17.100359,2.6680689z M0,0L6.9007497,0 4.2332802,2.6680689 8.2359996,6.6708961 6.5028391,8.404 2.5001297,4.4012227 0,6.9013147z"
+                                                              Fill="#FFFFFFFF"
+                                                              RenderTransformOrigin="0.5,0.5"
+                                                              Stretch="Uniform">
+                                                            <Path.RenderTransform>
+                                                                <TransformGroup>
+                                                                    <TransformGroup.Children>
+                                                                        <RotateTransform Angle="0" />
+                                                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                                                    </TransformGroup.Children>
+                                                                </TransformGroup>
+                                                            </Path.RenderTransform>
+                                                        </Path>
+                                                    </Grid>
+                                                </Button.Content>
+                                            </Button>
+                                        </Grid>
+                                        <Button Command="{Binding Source={x:Static shell:SystemCommands.CloseWindowCommand}}"
+                                                Style="{DynamicResource SystemCloseButtonStyle}"
+                                                ToolTip="关闭">
+                                            <Button.Content>
+                                                <Grid Width="32"
+                                                      Height="32"
+                                                      RenderTransform="1,0,0,1,0,1">
+                                                    <Path Width="16"
+                                                          Height="16"
+                                                          Margin="0,0,0,0"
+                                                          Data="M72.0101,0C90.4433,2E-06,108.882,7.01784,122.949,21.0535L384.892,282.359 646.792,21.0535C674.927,-7.01784 720.547,-7.01784 748.683,21.0535 776.775,49.1265 776.775,94.5986 748.64,122.67L486.74,383.975 748.683,645.324C776.818,673.397 776.775,718.89 748.683,746.962 720.547,775.002 674.927,775.023 646.792,746.962L384.892,485.635 122.949,746.962C94.814,775.023 49.1957,775.002 21.1022,746.962 -7.03405,718.89 -7.03405,673.397 21.1022,645.324L283.001,384.018 21.1022,122.67C-7.03405,94.5986 -7.03405,49.1265 21.1022,21.0535 35.1489,7.01784 53.5769,2E-06 72.0101,0z"
+                                                          Fill="#FFFFFFFF"
+                                                          RenderTransformOrigin="0.5,0.5"
+                                                          Stretch="Uniform">
+                                                        <Path.RenderTransform>
+                                                            <TransformGroup>
+                                                                <TransformGroup.Children>
+                                                                    <RotateTransform Angle="0" />
+                                                                    <ScaleTransform ScaleX="1" ScaleY="1" />
+                                                                </TransformGroup.Children>
+                                                            </TransformGroup>
+                                                        </Path.RenderTransform>
+                                                    </Path>
+                                                </Grid>
+                                            </Button.Content>
+                                        </Button>
+                                    </StackPanel>
+                                </Grid>
+
+                                <Rectangle x:Name="overlay"
+                                           Grid.Row="0"
+                                           Grid.RowSpan="2"
+                                           Panel.ZIndex="9"
+                                           Fill="#FF000000"
+                                           Opacity="0.2"
+                                           Visibility="Collapsed" />
+                                <Grid x:Name="ClientArea" Grid.Row="1">
+                                    <Grid.Background>
+                                        <SolidColorBrush Color="#222" />
+                                    </Grid.Background>
+
+                                    <!--  客户显示区域内容  -->
+                                    <ContentPresenter />
+
+                                    <!--  改变大小图标  -->
+                                    <Grid x:Name="ResizeGrip"
+                                          HorizontalAlignment="Right"
+                                          VerticalAlignment="Bottom"
+                                          Background="Transparent"
+                                          Visibility="Collapsed"
+                                          shellex:WindowChrome.ResizeGripDirection="BottomRight">
+                                        <Path Width="12"
+                                              Height="12"
+                                              Margin="5"
+                                              Data="F1 M1,10 L3,10 M5,10 L7,10 M9,10 L11,10 M2,9 L2,11 M6,9 L6,11 M10,9 L10,11 M5,6 L7,6 M9,6 L11,6 M6,5 L6,7 M10,5 L10,7 M9,2 L11,2 M10,1 L10,3"
+                                              Stretch="None"
+                                              Stroke="White"
+                                              StrokeThickness="1">
+                                            <Path.RenderTransform>
+                                                <ScaleTransform CenterX="6" CenterY="6" ScaleX="1.5" ScaleY="1.5"></ScaleTransform>
+                                            </Path.RenderTransform>
+                                        </Path>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </AdornerDecorator>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Icon" Value="{x:Null}">
+                            <Setter TargetName="icon" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                        <Trigger Property="WindowState" Value="Maximized">
+                            <Setter TargetName="Maximize" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="Restore" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="LayoutRoot" Property="Margin" Value="7" />
+                        </Trigger>
+                        <Trigger Property="WindowState" Value="Normal">
+                            <Setter TargetName="Maximize" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="Restore" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="ResizeMode" Value="CanResizeWithGrip" />
+                                <Condition Property="WindowState" Value="Normal" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="ResizeGrip" Property="Visibility" Value="Visible" />
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Setter Property="shellex:WindowChrome.WindowChrome">
+            <Setter.Value>
+                <shellex:WindowChrome CaptionHeight="48"
+                                      CornerRadius="12,12,0,0"
+                                      GlassFrameThickness="1"
+                                      NonClientFrameEdges="None"
+                                      ResizeBorderThickness="5"
+                                      UseAeroCaptionButtons="False" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
