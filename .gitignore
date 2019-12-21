@@ -1,0 +1,16 @@
+Logger/bin/Debug
+EasyPlayerNetSDK/Bin/Debug
+EasyPlayerNetSDK/obj/Debug/
+TCPAsyncServer/bin/Debug/
+videoPlayer/bin/Debug/
+videoPlayer/obj/Debug/
+TCPAsyncServer/obj/Debug/
+.vs/
+Logger/obj/Debug/
+videoPlayer/bin/
+videoPlayer/obj/
+Logger/bin/
+EasyPlayerNetSDK/obj/
+Logger/obj/
+TCPAsyncServer/bin/
+TCPAsyncServer/obj/
