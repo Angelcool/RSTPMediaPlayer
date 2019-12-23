@@ -1,0 +1,95 @@
+﻿<UserControl x:Class="VideoPlayerForWpf.Controls.ScreenSwitch"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VideoPlayerForWpf.Controls"
+             mc:Ignorable="d" Height="28" Width="auto">
+    <UserControl.Resources>
+        <Style x:Key="tbtnCommon" TargetType="ToggleButton">
+            <Setter Property="Width" Value="24"/>
+            <Setter Property="IsChecked" Value="False" />
+            <Setter Property="Height" Value="24" />
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Margin" Value="0,0,5,0" />
+        </Style>
+
+        <Style x:Key="screenFour" TargetType="ToggleButton" BasedOn="{StaticResource tbtnCommon}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToggleButton">
+                        <Image x:Name="default" Cursor="Hand" IsHitTestVisible="True" OverridesDefaultStyle="True" Source="../Resources/Images/screen_four.png" Width="24" Height="24" Stretch="Uniform"/>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="true">
+                                <Setter TargetName="default" Property="Source" Value="../Resources/Images/screen_four_active.png" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="default" Property="Source" Value="../Resources/Images/screen_four_active.png" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="screenSix" TargetType="ToggleButton" BasedOn="{StaticResource tbtnCommon}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToggleButton">
+                        <Image x:Name="default" Cursor="Hand" IsHitTestVisible="True" OverridesDefaultStyle="True" Source="../Resources/Images/screen_six.png" Width="24" Height="24" Stretch="Uniform"/>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="true">
+                                <Setter TargetName="default" Property="Source" Value="../Resources/Images/screen_six_active.png" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="default" Property="Source" Value="../Resources/Images/screen_six_active.png" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="screenNine" TargetType="ToggleButton" BasedOn="{StaticResource tbtnCommon}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToggleButton">
+                        <Image x:Name="default" Cursor="Hand" IsHitTestVisible="True" OverridesDefaultStyle="True" Source="../Resources/Images/screen_nine.png" Width="24" Height="24" Stretch="Uniform"/>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="true">
+                                <Setter TargetName="default" Property="Source" Value="../Resources/Images/screen_nine_active.png" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="default" Property="Source" Value="../Resources/Images/screen_nine_active.png" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="screenSixTeen" TargetType="ToggleButton" BasedOn="{StaticResource tbtnCommon}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToggleButton">
+                        <Image x:Name="default" Cursor="Hand" IsHitTestVisible="True" OverridesDefaultStyle="True" Source="../Resources/Images/screen_sixteen.png" Width="24" Height="24" Stretch="Uniform"/>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="true">
+                                <Setter TargetName="default" Property="Source" Value="../Resources/Images/screen_sixteen_active.png" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="default" Property="Source" Value="../Resources/Images/screen_sixteen_active.png" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <StackPanel Orientation="Horizontal">
+        <ToggleButton Style="{StaticResource screenFour}" ToolTip="四分屏" />
+        <ToggleButton Style="{StaticResource screenSix}" ToolTip="六分屏" />
+        <ToggleButton Style="{StaticResource screenNine}" ToolTip="九分屏" />
+        <ToggleButton Style="{StaticResource screenSixTeen}" ToolTip="十六分屏" />
+    </StackPanel>
+</UserControl>

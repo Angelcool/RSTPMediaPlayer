@@ -4,10 +4,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VideoPlayerForWpf.Themes"
+        xmlns:localControl="clr-namespace:VideoPlayerForWpf.Controls"
         mc:Ignorable="d" Icon="Resources/app.ico"
         WindowState="Maximized" WindowStartupLocation="CenterScreen"
         Title="融合通信" Height="450" Width="800">
+    <local:MercuriusWindow.TitleExtraArea>
+        <StackPanel Orientation="Horizontal" Margin="0,0,30,0">
+            <localControl:ScreenSwitch />
+        </StackPanel>
+    </local:MercuriusWindow.TitleExtraArea>
     <Grid>
-        
+        <Button>测试</Button>
     </Grid>
 </local:MercuriusWindow>

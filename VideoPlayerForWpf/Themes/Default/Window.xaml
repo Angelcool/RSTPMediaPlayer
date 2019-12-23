@@ -40,21 +40,22 @@
                             </AdornerDecorator.Effect>
                             <Grid x:Name="LayoutRoot">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="48" />
+                                    <RowDefinition Height="36" />
                                     <RowDefinition Height="*" />
                                 </Grid.RowDefinitions>
 
                                 <!--  标题栏  -->
-                                <Grid>
+                                <Grid Margin="0" VerticalAlignment="Center">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="Auto" />
                                         <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="2*" />
                                         <ColumnDefinition Width="Auto" />
                                     </Grid.ColumnDefinitions>
 
                                     <!--  Icon图标  -->
-                                    <Border x:Name="icon" Width="26"
-                                            Height="26"
+                                    <Border x:Name="icon" Width="24"
+                                            Height="24"
                                             Margin="8,0,8,0">
                                         <Image Source="{TemplateBinding Icon}" Stretch="Uniform" />
                                     </Border>
@@ -86,18 +87,26 @@
                                         <!-- 副标题 -->
                                     </StackPanel>
 
+                                    <!-- 标题扩展区 -->
+                                    <ContentControl Grid.Column="2" Margin="0,0,3,0" 
+                                            SnapsToDevicePixels="True" Background="Transparent"
+                                            VerticalAlignment="Center" IsHitTestVisible="True"
+                                            HorizontalAlignment="{TemplateBinding TitleExtraAreaAlignment}"
+                                            Content="{TemplateBinding TitleExtraArea}"
+                                            shellex:WindowChrome.IsHitTestVisibleInChrome="True" />
+
                                     <!--  Windows系统按钮  -->
-                                    <StackPanel Grid.Column="2"
-                                                Margin="0,2,3,0"
-                                                VerticalAlignment="Top"
+                                    <StackPanel Grid.Column="3"
+                                                Margin="0,-1,3,0"
+                                                VerticalAlignment="Center"
                                                 Orientation="Horizontal"
                                                 shellex:WindowChrome.IsHitTestVisibleInChrome="True">
                                         <Button Command="{Binding Source={x:Static shell:SystemCommands.MinimizeWindowCommand}}"
                                                 Style="{DynamicResource SystemButtonStyle}"
                                                 ToolTip="最小化">
                                             <Button.Content>
-                                                <Grid Width="32"
-                                                      Height="32"
+                                                <Grid Width="28"
+                                                      Height="28"
                                                       RenderTransform="1,0,0,1,0,1">
                                                     <Path Width="16"
                                                           Height="16"
@@ -125,8 +134,8 @@
                                                     ToolTip="还原"
                                                     Visibility="Collapsed">
                                                 <Button.Content>
-                                                    <Grid Width="32"
-                                                          Height="32"
+                                                    <Grid Width="28"
+                                                          Height="28"
                                                           RenderTransform="1,0,0,1,.5,.5"
                                                           UseLayoutRounding="True">
                                                         <Path Width="16"
@@ -153,7 +162,7 @@
                                                     Style="{DynamicResource SystemButtonStyle}"
                                                     ToolTip="最大化">
                                                 <Button.Content>
-                                                    <Grid Width="32" Height="32">
+                                                    <Grid Width="28" Height="28">
                                                         <Path Width="16"
                                                               Height="16"
                                                               Margin="0,0,0,0"
@@ -178,8 +187,8 @@
                                                 Style="{DynamicResource SystemCloseButtonStyle}"
                                                 ToolTip="关闭">
                                             <Button.Content>
-                                                <Grid Width="32"
-                                                      Height="32"
+                                                <Grid Width="28"
+                                                      Height="28"
                                                       RenderTransform="1,0,0,1,0,1">
                                                     <Path Width="16"
                                                           Height="16"
@@ -269,7 +278,7 @@
 
         <Setter Property="shellex:WindowChrome.WindowChrome">
             <Setter.Value>
-                <shellex:WindowChrome CaptionHeight="48"
+                <shellex:WindowChrome CaptionHeight="36"
                                       CornerRadius="12,12,0,0"
                                       GlassFrameThickness="1"
                                       NonClientFrameEdges="None"

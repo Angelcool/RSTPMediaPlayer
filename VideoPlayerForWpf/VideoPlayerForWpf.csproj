@@ -63,6 +63,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\ScreenSwitch.xaml.cs">
+      <DependentUpon>ScreenSwitch.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Themes\Controls\AnimatedContentControl.cs" />
     <Compile Include="Themes\Controls\RoundedBox.xaml.cs">
       <DependentUpon>RoundedBox.xaml</DependentUpon>
@@ -72,6 +75,10 @@
     <Compile Include="Themes\Converters\MinusConverter.cs" />
     <Compile Include="Themes\MercuriusDialog.cs" />
     <Compile Include="Themes\MercuriusWindow.cs" />
+    <Page Include="Controls\ScreenSwitch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

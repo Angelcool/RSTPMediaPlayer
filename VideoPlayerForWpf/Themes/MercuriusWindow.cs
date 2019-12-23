@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace VideoPlayerForWpf.Themes
@@ -17,9 +18,37 @@ namespace VideoPlayerForWpf.Themes
         }
 
         /// <summary>
+        /// 标题扩展区依赖属性
+        /// </summary>
+        public Panel TitleExtraArea
+        {
+            get { return (Panel)GetValue(TitleExtraAreaProperty); }
+            set { SetValue(TitleExtraAreaProperty, value); }
+        }
+
+        /// <summary>
+        /// 标题扩展区对齐方式依赖属性
+        /// </summary>
+        public HorizontalAlignment TitleExtraAreaAlignment
+        {
+            get { return (HorizontalAlignment)GetValue(TitleExtraAreaAlignmentProperty); }
+            set { SetValue(TitleExtraAreaAlignmentProperty, value); }
+        }
+
+        /// <summary>
+        /// 注册标题扩展区对齐方式依赖属性
+        /// </summary>
+        public static readonly DependencyProperty TitleExtraAreaAlignmentProperty = DependencyProperty.Register("TitleExtraAreaAlignment", typeof(HorizontalAlignment), typeof(MercuriusWindow), new PropertyMetadata(HorizontalAlignment.Right));
+
+        /// <summary>
         /// 注册副标题依赖属性
         /// </summary>
         public static readonly DependencyProperty SubTitleProperty = DependencyProperty.Register("SubTitle", typeof(string), typeof(MercuriusWindow), new PropertyMetadata(""));
+
+        /// <summary>
+        /// 注册标题扩展区
+        /// </summary>
+        public static readonly DependencyProperty TitleExtraAreaProperty = DependencyProperty.Register("TitleExtraArea", typeof(Panel), typeof(MercuriusWindow));
 
         #endregion
 
