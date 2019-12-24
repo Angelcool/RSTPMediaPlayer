@@ -63,6 +63,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\Events\ScreenChangedEventArgs.cs" />
     <Compile Include="Controls\ScreenSwitch.xaml.cs">
       <DependentUpon>ScreenSwitch.xaml</DependentUpon>
     </Compile>
@@ -283,6 +284,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\app.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\navs.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

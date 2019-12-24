@@ -8,12 +8,74 @@
         mc:Ignorable="d" Icon="Resources/app.ico"
         WindowState="Maximized" WindowStartupLocation="CenterScreen"
         Title="融合通信" Height="450" Width="800">
+    <local:MercuriusWindow.Resources>
+        <XmlDataProvider x:Key="navDatas" Source="./Resources/navs.xml"></XmlDataProvider>
+    </local:MercuriusWindow.Resources>
     <local:MercuriusWindow.TitleExtraArea>
-        <StackPanel Orientation="Horizontal" Margin="0,0,30,0">
-            <localControl:ScreenSwitch />
+        <StackPanel Orientation="Horizontal" Margin="0,0,20,0">
+            <localControl:ScreenSwitch ScreenChanged="ScreenSwitch_ScreenChanged" ScreenCount="Nine" Margin="0,0,20,0" />
+            <Button Width="24" Height="24" Cursor="Hand" Margin="0,2,0,0">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Image Source="./Resources/Images/forword_1.png" Width="16" Height="16" Stretch="Uniform" />
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <ToggleButton Width="24" Height="24" Cursor="Hand" IsChecked="True" Click="OnToggleNav" ToolTip="切换导航区">
+                <ToggleButton.Template>
+                    <ControlTemplate TargetType="ToggleButton">
+                        <Image x:Name="img1" Source="./Resources/Images/institutionList.png" Width="16" Height="16" Stretch="Uniform" />
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="img1" Property="Width" Value="20" />
+                                <Setter TargetName="img1" Property="Height" Value="20" />
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="true">
+                                <Setter TargetName="img1" Property="Width" Value="20" />
+                                <Setter TargetName="img1" Property="Height" Value="20" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </ToggleButton.Template>
+            </ToggleButton>
         </StackPanel>
     </local:MercuriusWindow.TitleExtraArea>
     <Grid>
-        <Button>测试</Button>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="260" x:Name="rightNav" />
+        </Grid.ColumnDefinitions>
+        <ItemsControl Grid.Column="1" Padding="15" 
+                      DataContext="{Binding Source={StaticResource navDatas}, XPath=/root/item}"
+                      ItemsSource="{Binding .}"
+                      Background="#FF2F2F2F">
+            <ItemsControl.Template>
+                <ControlTemplate>
+                    <Border BorderBrush="#ccc" BorderThickness="1,0,0,0" Padding="10">
+                        <ScrollViewer>
+                            <ItemsPresenter SnapsToDevicePixels="True" />
+                        </ScrollViewer>
+                    </Border>
+                </ControlTemplate>
+            </ItemsControl.Template>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,0,0,15">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="60" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="{Binding XPath=@num}" Foreground="Gray" />
+                                <Label Content="{Binding XPath=@name}" Foreground="WhiteSmoke" />
+                                <Label Content="{Binding XPath=@code}" Foreground="WhiteSmoke" />
+                            </StackPanel>
+                            <Label Content="{Binding XPath=@area}" Foreground="Gray" />
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
     </Grid>
 </local:MercuriusWindow>

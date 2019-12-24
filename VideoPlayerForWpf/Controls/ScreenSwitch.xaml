@@ -86,10 +86,10 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    <StackPanel Orientation="Horizontal">
-        <ToggleButton Style="{StaticResource screenFour}" ToolTip="四分屏" />
-        <ToggleButton Style="{StaticResource screenSix}" ToolTip="六分屏" />
-        <ToggleButton Style="{StaticResource screenNine}" ToolTip="九分屏" />
-        <ToggleButton Style="{StaticResource screenSixTeen}" ToolTip="十六分屏" />
+    <StackPanel x:Name="spScreens" Orientation="Horizontal">
+        <ToggleButton Style="{StaticResource screenFour}" Tag="4" Click="OnChangeScreen" ToolTip="四分屏" />
+        <ToggleButton Style="{StaticResource screenSix}" Tag="6" Click="OnChangeScreen" ToolTip="六分屏" />
+        <ToggleButton Style="{StaticResource screenNine}" Tag="9" Click="OnChangeScreen" ToolTip="九分屏" />
+        <ToggleButton Style="{StaticResource screenSixTeen}" Tag="16" Click="OnChangeScreen" ToolTip="十六分屏" />
     </StackPanel>
 </UserControl>
