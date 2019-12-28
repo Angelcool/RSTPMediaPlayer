@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="VideoPlayerForWpf.Controls.MonitorUnit"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VideoPlayerForWpf.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style x:Key="closeStyle" TargetType="Button" BasedOn="{x:Null}">
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Padding" Value="15,0,15,0" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Background" Value="LightGray" />
+            <Setter Property="Foreground" Value="WhiteSmoke" />
+        </Style>
+
+        <Style x:Key="button1Style" TargetType="Button" BasedOn="{x:Null}">
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Padding" Value="5,0,5,0" />
+            <Setter Property="Margin" Value="5,0,5,0" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Image Source="../Resources/Images/to_split.png" Width="18" Height="18" Stretch="Uniform" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="button2Style" TargetType="Button" BasedOn="{x:Null}">
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Padding" Value="5,0,5,0" />
+            <Setter Property="Margin" Value="5,0,5,0" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Image Source="../Resources/Images/videoPcPush.png" Width="14" Height="14" Stretch="Uniform" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="button3Style" TargetType="Button" BasedOn="{x:Null}">
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Padding" Value="5,0,5,0" />
+            <Setter Property="Margin" Value="5,0,5,0" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Image Source="../Resources/Images/currentWin.png" Width="14" Height="14" Stretch="Uniform" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Border BorderBrush="Black" BorderThickness="1">
+        <Border.Effect>
+            <DropShadowEffect Color="LightBlue" ShadowDepth="1" Opacity="0.6" BlurRadius="1" />
+        </Border.Effect>
+        <Grid>
+            <MediaElement Name="mePlayer" StretchDirection="Both"
+                          Source="pack://siteoforigin:,,,../Resources/Videos/test1.mp4"
+                          Stretch="Fill" LoadedBehavior="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=LoadedBehavior}" />
+            <TextBlock Text="李阳 100625 武汉市公安局" FontSize="24" FontStyle="Normal" FontStretch="Medium" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,35" />
+            <Grid Height="25" VerticalAlignment="Bottom">
+                <Grid.Background>
+                    <SolidColorBrush Color="Gray" Opacity="0.7" />
+                </Grid.Background>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Content="11:24" Foreground="White" Margin="10,0,0,0" />
+                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Style="{StaticResource button1Style}" />
+                    <Button Style="{StaticResource button2Style}" />
+                    <Button Style="{StaticResource button3Style}" />
+                    <Button Style="{StaticResource closeStyle}" Content="关闭" Margin="10,0,0,0" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

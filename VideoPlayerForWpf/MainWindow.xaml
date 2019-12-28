@@ -45,13 +45,42 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="260" x:Name="rightNav" />
         </Grid.ColumnDefinitions>
-        <ItemsControl Grid.Column="1" Padding="15" 
+
+        <Grid Grid.Column="0" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <localControl:MonitorUnit
+                Grid.RowSpan="2" Grid.ColumnSpan="2" Background="LightGray"
+                VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch"
+                LoadedBehavior="Play" />
+
+            <localControl:MonitorUnit LoadedBehavior="Pause" Grid.Column="2" />
+            <localControl:MonitorUnit LoadedBehavior="Pause" Grid.Row="1" Grid.Column="2" />
+            <localControl:MonitorUnit LoadedBehavior="Pause" Grid.Row="2" Grid.Column="0" />
+            <localControl:MonitorUnit LoadedBehavior="Pause" Grid.Row="2" Grid.Column="1" />
+            <localControl:MonitorUnit LoadedBehavior="Pause" Grid.Row="2" Grid.Column="2" />
+            <localControl:MonitorUnit LoadedBehavior="Pause" Grid.Row="3" Grid.Column="0" />
+            <localControl:MonitorUnit LoadedBehavior="Pause" Grid.Row="3" Grid.Column="1" />
+            <localControl:MonitorUnit LoadedBehavior="Pause" Grid.Row="3" Grid.Column="2" />
+
+        </Grid>
+        
+        <ItemsControl Grid.Column="1"
                       DataContext="{Binding Source={StaticResource navDatas}, XPath=/root/item}"
-                      ItemsSource="{Binding .}"
-                      Background="#FF2F2F2F">
+                      ItemsSource="{Binding .}">
             <ItemsControl.Template>
                 <ControlTemplate>
-                    <Border BorderBrush="#ccc" BorderThickness="1,0,0,0" Padding="10">
+                    <Border BorderBrush="#ccc" Background="DarkGray" BorderThickness="1,0,0,0" Padding="15,15,0,15">
                         <ScrollViewer>
                             <ItemsPresenter SnapsToDevicePixels="True" />
                         </ScrollViewer>
@@ -63,15 +92,31 @@
                     <Grid Margin="0,0,0,15">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="60" />
+                            <ColumnDefinition Width="auto" />
                         </Grid.ColumnDefinitions>
                         <StackPanel Orientation="Vertical">
                             <StackPanel Orientation="Horizontal">
-                                <Label Content="{Binding XPath=@num}" Foreground="Gray" />
-                                <Label Content="{Binding XPath=@name}" Foreground="WhiteSmoke" />
-                                <Label Content="{Binding XPath=@code}" Foreground="WhiteSmoke" />
+                                <Label Content="{Binding XPath=@num}" Foreground="#444" />
+                                <Label Content="{Binding XPath=@name}" Foreground="White" />
+                                <Label Content="{Binding XPath=@code}" Foreground="White" />
                             </StackPanel>
-                            <Label Content="{Binding XPath=@area}" Foreground="Gray" />
+                            <Label Content="{Binding XPath=@area}" Foreground="#444" />
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" Orientation="Horizontal">
+                            <Button Style="{x:Null}">
+                                <Button.Template>
+                                    <ControlTemplate>
+                                        <Image Source="./Resources/Images/videoPcPush.png" Width="14" Height="14" Stretch="Uniform" />
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <Button Style="{x:Null}" Margin="10,0,10,0">
+                                <Button.Template>
+                                    <ControlTemplate>
+                                        <Image Source="./Resources/Images/select.png" Width="18" Height="18" Stretch="Uniform" />
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>
