@@ -63,6 +63,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\Button.xaml.cs">
+      <DependentUpon>Button.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Events\ScreenChangedEventArgs.cs" />
     <Compile Include="Controls\Events\ZoomChangedEventArgs.cs" />
     <Compile Include="Controls\MonitorUnit.xaml.cs">
@@ -72,6 +75,9 @@
       <DependentUpon>ScreenSwitch.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\MonitorEntity.cs" />
+    <Compile Include="PopupWindow.xaml.cs">
+      <DependentUpon>PopupWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Service\MonitorDatasService.cs" />
     <Compile Include="Themes\Controls\AnimatedContentControl.cs" />
     <Compile Include="Themes\Controls\RoundedBox.xaml.cs">
@@ -82,6 +88,10 @@
     <Compile Include="Themes\Converters\MinusConverter.cs" />
     <Compile Include="Themes\MercuriusDialog.cs" />
     <Compile Include="Themes\MercuriusWindow.cs" />
+    <Page Include="Controls\Button.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Controls\MonitorUnit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -102,6 +112,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PopupWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Themes\Commons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
