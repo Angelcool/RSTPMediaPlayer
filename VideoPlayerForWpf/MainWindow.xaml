@@ -13,7 +13,7 @@
     </local:MercuriusWindow.Resources>
     <local:MercuriusWindow.TitleExtraArea>
         <StackPanel Orientation="Horizontal" Margin="0,0,20,0">
-            <localControl:ScreenSwitch ScreenChanged="ScreenSwitch_ScreenChanged" ScreenCount="Nine" Margin="0,0,20,0" />
+            <localControl:ScreenSwitch x:Name="screenSwitch" ScreenChanged="ScreenSwitch_ScreenChanged" ScreenCount="Nine" Margin="0,0,20,0" />
             <Button Width="24" Height="24" Cursor="Hand" Margin="0,2,0,0">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
@@ -21,7 +21,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <ToggleButton Width="24" Height="24" Cursor="Hand" IsChecked="True" Click="OnToggleNav" ToolTip="切换导航区">
+            <ToggleButton x:Name="tbNavigation" Width="24" Height="24" Cursor="Hand" IsChecked="True" Click="OnToggleNav" ToolTip="切换导航区">
                 <ToggleButton.Template>
                     <ControlTemplate TargetType="ToggleButton">
                         <Image x:Name="img1" Source="./Resources/Images/institutionList.png" Width="16" Height="16" Stretch="Uniform" />
@@ -46,33 +46,12 @@
             <ColumnDefinition Width="260" x:Name="rightNav" />
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0" Grid.ColumnSpan="2">
+        <Grid x:Name="gridContainer" Grid.Column="0" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-
-            <localControl:MonitorUnit
-                Grid.RowSpan="2" Grid.ColumnSpan="2" Background="LightGray"
-                VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch"
-                LoadedBehavior="Play" />
-
-            <localControl:MonitorUnit LoadedBehavior="Pause" Grid.Column="2" />
-            <localControl:MonitorUnit LoadedBehavior="Pause" Grid.Row="1" Grid.Column="2" />
-            <localControl:MonitorUnit LoadedBehavior="Pause" Grid.Row="2" Grid.Column="0" />
-            <localControl:MonitorUnit LoadedBehavior="Pause" Grid.Row="2" Grid.Column="1" />
-            <localControl:MonitorUnit LoadedBehavior="Pause" Grid.Row="2" Grid.Column="2" />
-            <localControl:MonitorUnit LoadedBehavior="Pause" Grid.Row="3" Grid.Column="0" />
-            <localControl:MonitorUnit LoadedBehavior="Pause" Grid.Row="3" Grid.Column="1" />
-            <localControl:MonitorUnit LoadedBehavior="Pause" Grid.Row="3" Grid.Column="2" />
-
         </Grid>
         
         <ItemsControl Grid.Column="1"

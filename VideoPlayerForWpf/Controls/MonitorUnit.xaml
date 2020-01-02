@@ -39,14 +39,19 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Style x:Key="button3Style" TargetType="Button" BasedOn="{x:Null}">
+        <Style x:Key="button3Style" TargetType="ToggleButton" BasedOn="{x:Null}">
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="Padding" Value="5,0,5,0" />
             <Setter Property="Margin" Value="5,0,5,0" />
             <Setter Property="Template">
                 <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Image Source="../Resources/Images/currentWin.png" Width="14" Height="14" Stretch="Uniform" />
+                    <ControlTemplate TargetType="ToggleButton">
+                        <Image x:Name="img1" Source="../Resources/Images/currentWin.png" Width="14" Height="14" Stretch="Uniform" />
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="true">
+                                <Setter TargetName="img1" Property="Source" Value="../Resources/Images/currentWinAfter.png" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
@@ -60,7 +65,7 @@
             <MediaElement Name="mePlayer" StretchDirection="Both"
                           Source="pack://siteoforigin:,,,../Resources/Videos/test1.mp4"
                           Stretch="Fill" LoadedBehavior="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=LoadedBehavior}" />
-            <TextBlock Text="李阳 100625 武汉市公安局" FontSize="24" FontStyle="Normal" FontStretch="Medium" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,35" />
+            <TextBlock x:Name="tbTitle" Text="" FontSize="24" FontStyle="Normal" FontStretch="Medium" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,35" />
             <Grid Height="25" VerticalAlignment="Bottom">
                 <Grid.Background>
                     <SolidColorBrush Color="Gray" Opacity="0.7" />
@@ -73,7 +78,7 @@
                 <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button Style="{StaticResource button1Style}" />
                     <Button Style="{StaticResource button2Style}" />
-                    <Button Style="{StaticResource button3Style}" />
+                    <ToggleButton x:Name="tbZoom" Style="{StaticResource button3Style}" Click="ToggleButton_Click" />
                     <Button Style="{StaticResource closeStyle}" Content="关闭" Margin="10,0,0,0" />
                 </StackPanel>
             </Grid>

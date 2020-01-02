@@ -64,12 +64,15 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Controls\Events\ScreenChangedEventArgs.cs" />
+    <Compile Include="Controls\Events\ZoomChangedEventArgs.cs" />
     <Compile Include="Controls\MonitorUnit.xaml.cs">
       <DependentUpon>MonitorUnit.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\ScreenSwitch.xaml.cs">
       <DependentUpon>ScreenSwitch.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\MonitorEntity.cs" />
+    <Compile Include="Service\MonitorDatasService.cs" />
     <Compile Include="Themes\Controls\AnimatedContentControl.cs" />
     <Compile Include="Themes\Controls\RoundedBox.xaml.cs">
       <DependentUpon>RoundedBox.xaml</DependentUpon>
@@ -293,7 +296,9 @@
     <Resource Include="Resources\app.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\navs.xml" />
+    <Content Include="Resources\navs.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Videos\test1.mp4">
