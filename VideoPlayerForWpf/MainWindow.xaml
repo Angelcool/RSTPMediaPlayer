@@ -7,7 +7,7 @@
         xmlns:localControl="clr-namespace:VideoPlayerForWpf.Controls"
         mc:Ignorable="d" Icon="Resources/app.ico"
         WindowState="Maximized" WindowStartupLocation="CenterScreen"
-        Title="融合通信" Height="450" Width="800">
+        Title="融合通信" Height="450" Width="900">
     <local:MercuriusWindow.Resources>
         <XmlDataProvider x:Key="navDatas" Source="./Resources/navs.xml"></XmlDataProvider>
     </local:MercuriusWindow.Resources>

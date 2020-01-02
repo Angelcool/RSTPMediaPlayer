@@ -1,0 +1,24 @@
+﻿<Button x:Class="VideoPlayerForWpf.FloatButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             Width="50" Height="50" Margin="0" 
+             HorizontalAlignment="Left" VerticalAlignment="Top" 
+             x:Name="btn"
+             Loaded="btn_Loaded" Click="btn_Click" >
+    <Button.Template>
+        <ControlTemplate>
+            <Grid MouseLeftButtonDown="Border_MouseLeftButtonDown">
+                <Border CornerRadius="25" Background="#022938" Opacity="0.8" >
+                </Border>
+                <Border CornerRadius="20" Width="40" Height="40" Background="#022938" Opacity="0.8" >
+                </Border>
+                <Border CornerRadius="14" Width="28" Height="28" Background="#b06919" Opacity="0.8" >
+                </Border>
+            </Grid>
+        </ControlTemplate>
+    </Button.Template>
+</Button>
