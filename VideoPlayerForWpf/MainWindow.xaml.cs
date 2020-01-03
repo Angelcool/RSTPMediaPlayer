@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Hardcodet.Wpf.TaskbarNotification;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,8 +15,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using VideoPlayerForWpf.Controller;
 using VideoPlayerForWpf.Controls;
 using VideoPlayerForWpf.Controls.Events;
+using VideoPlayerForWpf.Enum;
 using VideoPlayerForWpf.Models;
 using VideoPlayerForWpf.Service;
 
@@ -25,19 +29,71 @@ namespace VideoPlayerForWpf
     /// </summary>
     public partial class MainWindow
     {
+        private WindowState _lastWinState = WindowState.Maximized;//记录上一次WindowState 
         private IList<MonitorEntity> monitorEntities;
-
+        private VideoListService _videoListService;
         private MonitorDatasService monitorDatasService = new MonitorDatasService();
+
+        /// <summary>
+        /// 是否真的关闭窗口
+        /// </summary>
+        public bool IsReallyExit { get; set; }
 
         public MainWindow()
         {
             InitializeComponent();
-
+            _videoListService = new VideoListService();
+            HomeController.VideoPlayEvent += OnVideoPlayEvent;
             this.Loaded += this.MainWindow_Loaded;
         }
 
+        /// <summary>
+        /// 根据不同的消息类型做处理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnVideoPlayEvent(object sender, MessageEntity e)
+        {
+            switch (e.VideoMessageType)
+            {
+                case VideoMessageType.START:
+                    PopupWindow win = new PopupWindow();
+                    win.Show();
+                    break;
+                case VideoMessageType.STOP:
+                    break;
+                case VideoMessageType.OPENPUSH:
+                    break;
+                case VideoMessageType.SELECT:
+                    break;
+                case VideoMessageType.PUSHMANY:
+                    break;
+                case VideoMessageType.PTZCONTROL:
+                    break;
+                case VideoMessageType.SHOW:
+                    break;
+                case VideoMessageType.ROLLCALLSTATUS:
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            var rootVideo = _videoListService.GetVideoList();
+            if (!(rootVideo == null))
+            {
+
+            }
+
+            Minimized();
+
             this.monitorEntities = this.monitorDatasService.LoadMonitorDatas();
 
             this.Load9MonitorUnits();
@@ -229,6 +285,95 @@ namespace VideoPlayerForWpf
             return unit;
         }
 
+
+        #endregion
+        #region 托盘相关
+
+        /// <summary>
+        /// 窗口最小化
+        /// </summary>
+        private void Minimized()
+        {
+            WindowState = WindowState.Minimized;
+            Visibility = Visibility.Hidden;//最小化到托盘
+            miShowWindow.Header = "显示窗口";
+        }
+
+        /// <summary>
+        /// 菜单项"显示主窗口"点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MiShowWindow_Click(object sender, RoutedEventArgs e)
+        {
+            if (IsVisible)
+            {
+                Hide();
+                miShowWindow.Header = "显示窗口";
+            }
+            else
+            {
+                Show();
+                miShowWindow.Header = "隐藏窗口";
+            }
+            if (WindowState == WindowState.Minimized)
+            {
+                WindowState = _lastWinState;
+            }
+
+            Activate();
+        }
+
+        /// <summary>
+        /// 托盘退出
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Window_Close_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("确定要退出托盘应用程序吗？", "融合通信", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                IsReallyExit = true;
+                tbIcon.Visibility = Visibility.Hidden;
+                tbIcon.Dispose();
+
+                Application.Current.Shutdown();
+            }
+        }
+
+        /// <summary>
+        /// 关闭时,判断是缩小到托盘还是退出程序
+        /// </summary>
+        /// <param name="e"></param>
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            //默认是不退出，托盘模式
+            if (IsReallyExit)
+            {
+                e.Cancel = true;
+                Minimized();
+            }
+            else
+            {
+                MessageBoxResult result = MessageBox.Show("是否最小化到托盘？", "退出提示", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (result == MessageBoxResult.Yes)
+                {
+                    e.Cancel = true;
+                    //设置到托盘模式
+                    IsReallyExit = true;
+                    //窗口最小化
+                    Minimized();
+                }
+                else
+                {
+                    tbIcon.Dispose();
+                    Application.Current.Shutdown();
+                }
+            }
+
+            //base.OnClosing(e);
+        }
 
         #endregion
     }

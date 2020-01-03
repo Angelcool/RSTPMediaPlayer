@@ -130,8 +130,13 @@ namespace VideoPlayerForWpf.Controls
             this.GridColumnSpan = columnSpan;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="parentContainer"></param>
         public void ShowFullScreen(Grid parentContainer)
         {
+            //MessageBox.Show("111");
             this.SetValue(Grid.RowProperty, 0);
             this.SetValue(Grid.ColumnProperty, 0);
             this.SetValue(Grid.RowSpanProperty, parentContainer.RowDefinitions.Count);
@@ -154,12 +159,43 @@ namespace VideoPlayerForWpf.Controls
             this.Initialize(this.GridColumnIndex, this.GridRowIndex, this.GridColumnSpan, this.GridRowSpan);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ToggleButton_Click(object sender, RoutedEventArgs e)
         {
             if (sender is ToggleButton tbn)
             {
                 this.ZoomChanged?.Invoke(this, new ZoomChangedEventArgs { IsFullScreen = tbn.IsChecked ?? false });
             }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnPushToDevice_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnOutPlay_Click(object sender, RoutedEventArgs e)
+        {
+            PopupWindow popup = new PopupWindow
+            {
+                Owner = App.Current.MainWindow,
+                WindowStartupLocation = WindowStartupLocation.CenterOwner
+            };
+
+            popup.Show();
         }
     }
 }

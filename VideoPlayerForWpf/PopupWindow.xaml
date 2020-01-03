@@ -4,43 +4,84 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VideoPlayerForWpf.Themes"
-        xmlns:localControl="clr-namespace:VideoPlayerForWpf.Controls"
+        xmlns:wpf="clr-namespace:Vlc.DotNet.Wpf;assembly=Vlc.DotNet.Wpf"
         mc:Ignorable="d" Icon="Resources/app.ico" 
+        ResizeMode="CanMinimize"
         WindowStartupLocation="CenterOwner"
-        Title="融合通信" Height="1280" Width="720">
+        Title="融合通信" Height="720" Width="480">
     <local:MercuriusWindow.Resources>
         <XmlDataProvider x:Key="navDatas" Source="./Resources/navs.xml"></XmlDataProvider>
-    </local:MercuriusWindow.Resources>
-    <local:MercuriusWindow.TitleExtraArea>
-        <StackPanel Orientation="Horizontal" Margin="0,0,20,0">
-            <localControl:ScreenSwitch ScreenChanged="ScreenSwitch_ScreenChanged" ScreenCount="Nine" Margin="0,0,20,0" />
-            <Button Width="24" Height="24" Cursor="Hand" Margin="0,2,0,0">
-                <Button.Template>
+        <Style x:Key="closeStyle" TargetType="Button" BasedOn="{x:Null}">
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Padding" Value="15,0,15,0" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Background" Value="LightGray" />
+            <Setter Property="Foreground" Value="WhiteSmoke" />
+        </Style>
+
+        <Style x:Key="button1Style" TargetType="Button" BasedOn="{x:Null}">
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Padding" Value="5,0,5,0" />
+            <Setter Property="Margin" Value="5,0,5,0" />
+            <Setter Property="Template">
+                <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Image Source="./Resources/Images/forword_1.png" Width="16" Height="16" Stretch="Uniform" />
+                        <Image Source="/Resources/Images/to_split.png" Width="18" Height="18" Stretch="Uniform" />
                     </ControlTemplate>
-                </Button.Template>
-            </Button>
-            <ToggleButton Width="24" Height="24" Cursor="Hand" IsChecked="True" ToolTip="切换导航区">
-                <ToggleButton.Template>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="button2Style" TargetType="Button" BasedOn="{x:Null}">
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Padding" Value="5,0,5,0" />
+            <Setter Property="Margin" Value="5,0,5,0" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Image Source="/Resources/Images/videoPcPush.png" Width="14" Height="14" Stretch="Uniform" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="button3Style" TargetType="ToggleButton" BasedOn="{x:Null}">
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Padding" Value="5,0,5,0" />
+            <Setter Property="Margin" Value="5,0,5,0" />
+            <Setter Property="Template">
+                <Setter.Value>
                     <ControlTemplate TargetType="ToggleButton">
-                        <Image x:Name="img1" Source="./Resources/Images/institutionList.png" Width="16" Height="16" Stretch="Uniform" />
+                        <Image x:Name="img1" Source="/Resources/Images/currentWin.png" Width="14" Height="14" Stretch="Uniform" />
                         <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="true">
-                                <Setter TargetName="img1" Property="Width" Value="20" />
-                                <Setter TargetName="img1" Property="Height" Value="20" />
-                            </Trigger>
                             <Trigger Property="IsChecked" Value="true">
-                                <Setter TargetName="img1" Property="Width" Value="20" />
-                                <Setter TargetName="img1" Property="Height" Value="20" />
+                                <Setter TargetName="img1" Property="Source" Value="/Resources/Images/currentWinAfter.png" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
-                </ToggleButton.Template>
-            </ToggleButton>
-        </StackPanel>
-    </local:MercuriusWindow.TitleExtraArea>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </local:MercuriusWindow.Resources>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="95*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Image Name="MediaPlayer"/>
+        <!--<wpf:VlcControl Grid.Row="0" Grid.ColumnSpan="3" x:Name="vlcControl"/>-->
+        <!--<VideoPlayerForWpf x:Name="canvas" Height="600" Width="400" Grid.ColumnSpan="3"
+                         IsOpen="True" AllowsTransparency="True" PopupAnimation="Fade" VerticalOffset="-560">
+            <Canvas>
+                <Image Name="btnOK" Canvas.Left="0"
+                       Width="48" Height="70"
+                       MouseLeftButtonDown="rectOne_MouseLeftButtonDown" 
+                       Source="/recorder.png" Stretch="UniformToFill" ButtonBase.Click="BtnOK_Click" />
+            </Canvas>
+        </VideoPlayerForWpf>-->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+            <Button Style="{StaticResource button1Style}" />
+            <Button Style="{StaticResource button2Style}" />
+            <ToggleButton x:Name="tbZoom" Style="{StaticResource button3Style}" Click="ToggleButton_Click" />
+            <Button Style="{StaticResource closeStyle}" Content="关闭" Margin="10,0,0,0" />
+        </StackPanel>
     </Grid>
 </local:MercuriusWindow>

@@ -5,11 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VideoPlayerForWpf.Themes"
         xmlns:localControl="clr-namespace:VideoPlayerForWpf.Controls"
+        xmlns:tb="http://www.hardcodet.net/taskbar"
         mc:Ignorable="d" Icon="Resources/app.ico"
-        WindowState="Maximized" WindowStartupLocation="CenterScreen"
-        Title="融合通信" Height="450" Width="900">
+        WindowState="Maximized"
+        WindowStartupLocation="CenterScreen"
+        Title="融合通信" Height="800" Width="1280">
     <local:MercuriusWindow.Resources>
-        <XmlDataProvider x:Key="navDatas" Source="./Resources/navs.xml"></XmlDataProvider>
+        <!--<XmlDataProvider x:Key="navDatas" Source="./Resources/navs.xml"></XmlDataProvider>-->
+        <!--Menu分割线-->
+        <Style TargetType="Separator" x:Key="SeparatorStyle">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Separator">
+                        <Rectangle Fill="#FFC6D9E2" Height="1" Margin="3"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </local:MercuriusWindow.Resources>
     <local:MercuriusWindow.TitleExtraArea>
         <StackPanel Orientation="Horizontal" Margin="0,0,20,0">
@@ -54,9 +66,7 @@
             </Grid.ColumnDefinitions>
         </Grid>
         
-        <ItemsControl Grid.Column="1"
-                      DataContext="{Binding Source={StaticResource navDatas}, XPath=/root/item}"
-                      ItemsSource="{Binding .}">
+        <ItemsControl Grid.Column="1">
             <ItemsControl.Template>
                 <ControlTemplate>
                     <Border BorderBrush="#ccc" Background="DarkGray" BorderThickness="1,0,0,0" Padding="15,15,0,15">
@@ -101,5 +111,16 @@
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
+        <!--托盘菜单-->
+        <tb:TaskbarIcon x:Name="tbIcon" IconSource="Resources/app.ico" TrayMouseDoubleClick="MiShowWindow_Click">
+            <tb:TaskbarIcon.ContextMenu>
+                <ContextMenu Style="{x:Null}">
+                    <MenuItem x:Name="miShowWindow" Click="MiShowWindow_Click"  Header="隐藏窗口"/>
+                    <MenuItem x:Name="miTopMost" Header="总在最前" IsCheckable="True"/>
+                    <Separator Style="{StaticResource SeparatorStyle}"/>
+                    <MenuItem x:Name="Window_Close" Click="Window_Close_Click"  Header="退出"/>
+                </ContextMenu>
+            </tb:TaskbarIcon.ContextMenu>
+        </tb:TaskbarIcon>
     </Grid>
 </local:MercuriusWindow>
