@@ -29,6 +29,9 @@ namespace VideoPlayerForWpf
     /// </summary>
     public partial class MainWindow
     {
+        /// <summary>
+        /// 
+        /// </summary>
         private WindowState _lastWinState = WindowState.Maximized;//记录上一次WindowState 
         private IList<MonitorEntity> monitorEntities;
         private VideoListService _videoListService;
@@ -39,12 +42,54 @@ namespace VideoPlayerForWpf
         /// </summary>
         public bool IsReallyExit { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
             _videoListService = new VideoListService();
-            HomeController.VideoPlayEvent += OnVideoPlayEvent;
+            HomeController.VideoPlayEvent += OnVideoPlay;
+            GroupController.VideoCallBackEvent += OnVideoCallBack;
             this.Loaded += this.MainWindow_Loaded;
+        }
+
+        /// <summary>
+        /// 视频切组/呼叫（PPT）
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnVideoCallBack(object sender, CallBackEntity e)
+        {
+            if (!e.Success)
+            {
+                foreach (Window win in this.OwnedWindows)
+                {
+                    if (win.Uid == e.CallId)
+                    {
+                        //如果呼叫的任一步骤出错，还原到初始状态，重新呼叫
+                    }
+                }
+
+                return;
+            }
+            switch (e.Type)
+            {
+                case 0:
+                    //切组成功 显示呼叫按钮
+
+                    break;
+                case 1:
+                    //呼叫成功，显示停止按钮
+
+                    break;
+                case 2:
+                    //停止成功，显示切组按钮
+
+                    break;
+                default:
+                    break;
+            }
         }
 
         /// <summary>
@@ -52,7 +97,7 @@ namespace VideoPlayerForWpf
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnVideoPlayEvent(object sender, MessageEntity e)
+        private void OnVideoPlay(object sender, MessageEntity e)
         {
             switch (e.VideoMessageType)
             {
@@ -99,6 +144,11 @@ namespace VideoPlayerForWpf
             this.Load9MonitorUnits();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ScreenSwitch_ScreenChanged(object sender, ScreenChangedEventArgs e)
         {
             switch (e.ScreenCount)
@@ -124,6 +174,11 @@ namespace VideoPlayerForWpf
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnToggleNav(object sender, RoutedEventArgs e)
         {
             var tbtn = sender as ToggleButton;
@@ -287,6 +342,7 @@ namespace VideoPlayerForWpf
 
 
         #endregion
+
         #region 托盘相关
 
         /// <summary>

@@ -102,7 +102,7 @@ namespace VideoPlayerForWpf.Models
         public bool ShowGroupCall { get; set; }
 
         /// <summary>
-        /// 
+        /// 是否将视频置顶（放大最窗口中）
         /// </summary>
         public bool CoverageFocus { get; set; } = true;
     }

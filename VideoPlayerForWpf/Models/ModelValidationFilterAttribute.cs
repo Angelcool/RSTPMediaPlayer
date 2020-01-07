@@ -35,7 +35,7 @@ namespace VideoPlayerForWpf
                     actionContext.Response = actionContext.Request.CreateResponse(HttpStatusCode.BadRequest, errors);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //CommonHelper.WriteLog(ex);
             }
