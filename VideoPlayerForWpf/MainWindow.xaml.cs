@@ -387,7 +387,8 @@ namespace VideoPlayerForWpf
         /// <param name="e"></param>
         private void Window_Close_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("确定要退出托盘应用程序吗？", "融合通信", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            var result = MessageBox.Show(this, "确定要退出托盘应用程序吗？", "融合通信", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
             if (result == MessageBoxResult.Yes)
             {
                 IsReallyExit = true;
@@ -412,7 +413,7 @@ namespace VideoPlayerForWpf
             }
             else
             {
-                MessageBoxResult result = MessageBox.Show("是否最小化到托盘？", "退出提示", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                var result = MessageBox.Show(this, "是否最小化到托盘？", "退出提示", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (result == MessageBoxResult.Yes)
                 {
                     e.Cancel = true;
