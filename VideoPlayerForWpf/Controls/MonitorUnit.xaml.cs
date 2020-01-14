@@ -26,6 +26,7 @@ namespace VideoPlayerForWpf.Controls
         #region Fields
 
         private MonitorEntity monitorData;
+        private bool autoHideRecordButton = true;
 
         #endregion
 
@@ -196,6 +197,24 @@ namespace VideoPlayerForWpf.Controls
             };
 
             popup.Show();
+        }
+
+        private void OnRecordButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.autoHideRecordButton = false;
+        }
+
+        private void UserControl_MouseEnter(object sender, MouseEventArgs e)
+        {
+            this.btnRecode.Visibility = Visibility.Visible;
+        }
+
+        private void UserControl_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (this.autoHideRecordButton)
+            {
+                this.btnRecode.Visibility = Visibility.Collapsed;
+            }
         }
     }
 }

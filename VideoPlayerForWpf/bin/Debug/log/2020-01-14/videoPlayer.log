@@ -1,0 +1,276 @@
+2020-01-14 21:15:26,588 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 21:19:06,006 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 21:20:41,159 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 21:24:14,600 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 21:24:23,748 [1] ERROR VideoPlayerForWpf.App Application_DispatcherUnhandledException [135行] - 启动时发生错误
+System.ArgumentException: “-51.5”不是属性“Height”的有效值。
+   在 System.Windows.DependencyObject.SetValueCommon(DependencyProperty dp, Object value, PropertyMetadata metadata, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType, Boolean isInternal)
+   在 System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   在 System.Windows.Controls.RowDefinition.set_Height(GridLength value)
+   在 VideoPlayerForWpf.MainWindow.Load4MonitorUnits() 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\MainWindow.xaml.cs:行号 201
+   在 VideoPlayerForWpf.MainWindow.ScreenSwitch_ScreenChanged(Object sender, ScreenChangedEventArgs e) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\MainWindow.xaml.cs:行号 157
+   在 VideoPlayerForWpf.Controls.ScreenSwitch.OnChangeScreen(Object sender, RoutedEventArgs e) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Controls\ScreenSwitch.xaml.cs:行号 112
+   在 System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   在 System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   在 System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   在 System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   在 System.Windows.Controls.Primitives.ButtonBase.OnClick()
+   在 System.Windows.Controls.Primitives.ToggleButton.OnClick()
+   在 System.Windows.Controls.Primitives.ButtonBase.OnMouseLeftButtonUp(MouseButtonEventArgs e)
+   在 System.Windows.UIElement.OnMouseLeftButtonUpThunk(Object sender, MouseButtonEventArgs e)
+   在 System.Windows.Input.MouseButtonEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)
+   在 System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   在 System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   在 System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   在 System.Windows.UIElement.ReRaiseEventAs(DependencyObject sender, RoutedEventArgs args, RoutedEvent newEvent)
+   在 System.Windows.UIElement.OnMouseUpThunk(Object sender, MouseButtonEventArgs e)
+   在 System.Windows.Input.MouseButtonEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)
+   在 System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   在 System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   在 System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   在 System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   在 System.Windows.UIElement.RaiseTrustedEvent(RoutedEventArgs args)
+   在 System.Windows.Input.InputManager.ProcessStagingArea()
+   在 System.Windows.Input.InputManager.ProcessInput(InputEventArgs input)
+   在 System.Windows.Input.InputProviderSite.ReportInput(InputReport inputReport)
+   在 System.Windows.Interop.HwndMouseInputProvider.ReportInput(IntPtr hwnd, InputMode mode, Int32 timestamp, RawMouseActions actions, Int32 x, Int32 y, Int32 wheel)
+   在 System.Windows.Interop.HwndMouseInputProvider.FilterMessage(IntPtr hwnd, WindowMessage msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   在 System.Windows.Interop.HwndSource.InputFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   在 MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   在 MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   在 System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   在 System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+2020-01-14 21:25:28,324 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 21:28:46,409 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 21:29:37,560 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 21:30:21,299 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 21:31:34,540 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 21:33:07,434 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 21:35:02,228 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 21:36:31,801 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 21:38:46,875 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 21:39:19,850 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 21:43:42,983 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 21:44:33,878 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 21:46:40,684 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 21:48:20,290 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 21:49:27,003 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 21:49:51,338 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 21:50:17,875 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 21:50:35,390 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 21:51:26,790 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 21:52:20,653 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 21:53:11,012 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 21:53:38,417 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 22:08:55,390 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 22:12:58,195 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 22:31:12,073 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 22:32:22,180 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 22:41:21,253 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 22:46:42,074 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 22:47:39,481 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207
+2020-01-14 22:49:00,563 [1] ERROR VideoPlayerForWpf.App GetHtml [214行] - 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8099
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 VideoPlayerForWpf.HttpHelper.GetHtml(HttpItem item) 位置 D:\源代码\外包项目\RSTPMediaPlayer\VideoPlayerForWpf\Service\HttpClient.cs:行号 207

@@ -11,7 +11,7 @@
         WindowStartupLocation="CenterScreen"
         Title="融合通信" Height="800" Width="1280">
     <local:MercuriusWindow.Resources>
-        <!--<XmlDataProvider x:Key="navDatas" Source="./Resources/navs.xml"></XmlDataProvider>-->
+        <XmlDataProvider x:Key="navDatas" Source="./Resources/navs.xml"></XmlDataProvider>
         <!--Menu分割线-->
         <Style TargetType="Separator" x:Key="SeparatorStyle">
             <Setter Property="Template">
@@ -58,15 +58,16 @@
             <ColumnDefinition Width="260" x:Name="rightNav" />
         </Grid.ColumnDefinitions>
 
-        <Grid x:Name="gridContainer" Grid.Column="0" Grid.ColumnSpan="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-        </Grid>
-        
-        <ItemsControl Grid.Column="1">
+        <ScrollViewer Grid.Column="0" Grid.ColumnSpan="2">
+            <Grid x:Name="gridContainer">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+            </Grid>
+        </ScrollViewer>
+        <ItemsControl DataContext="{StaticResource navDatas}" ItemsSource="{Binding XPath=./root/item}" Grid.Column="1">
             <ItemsControl.Template>
                 <ControlTemplate>
                     <Border BorderBrush="#ccc" Background="DarkGray" BorderThickness="1,0,0,0" Padding="15,15,0,15">

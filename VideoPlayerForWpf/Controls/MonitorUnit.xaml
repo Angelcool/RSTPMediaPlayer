@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:VideoPlayerForWpf.Controls"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800" MouseEnter="UserControl_MouseEnter" MouseLeave="UserControl_MouseLeave">
     <UserControl.Resources>
         <Style x:Key="closeStyle" TargetType="Button" BasedOn="{x:Null}">
             <Setter Property="Cursor" Value="Hand"/>
@@ -65,6 +65,22 @@
                           Source="pack://siteoforigin:,,,../Resources/Videos/test1.mp4"
                           Stretch="Fill" LoadedBehavior="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=LoadedBehavior}" />
             <TextBlock x:Name="tbTitle" Text="" FontSize="24" FontStyle="Normal" FontStretch="Medium" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,35" />
+
+            <Button x:Name="btnRecode" Click="OnRecordButtonClick" Visibility="Collapsed" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,70,100">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Canvas>
+                            <Canvas.RenderTransform>
+                                <ScaleTransform CenterX="0" ScaleX="2.5" ScaleY="2.5" />
+                            </Canvas.RenderTransform>
+                            <Ellipse Fill="LightSkyBlue" Height="20" Width="20" />
+                            <Path Fill="LightSkyBlue" Stroke="White" StrokeThickness="1" Data="M7 5a3 3 0 016 0v5a3 3 0 11-6 0V5z" />
+                            <Path Fill="White" Stroke="White" StrokeThickness="0" Data="M5.5 8.5A.5.5 0 016 9v1a4 4 0 008 0V9a.5.5 0 011 0v1a5 5 0 01-4.5 4.975V17h3a.5.5 0 010 1h-7a.5.5 0 010-1h3v-2.025A5 5 0 015 10V9a.5.5 0 01.5-.5z" />
+                        </Canvas>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
             <Grid Height="25" VerticalAlignment="Bottom">
                 <Grid.Background>
                     <SolidColorBrush Color="Gray" Opacity="0.7" />

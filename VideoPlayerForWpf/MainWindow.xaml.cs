@@ -38,6 +38,11 @@ namespace VideoPlayerForWpf
         private MonitorDatasService monitorDatasService = new MonitorDatasService();
 
         /// <summary>
+        /// 工作区高度
+        /// </summary>
+        private double workAreaHeight;
+
+        /// <summary>
         /// 是否真的关闭窗口
         /// </summary>
         public bool IsReallyExit { get; set; }
@@ -48,9 +53,11 @@ namespace VideoPlayerForWpf
         public MainWindow()
         {
             InitializeComponent();
+
             _videoListService = new VideoListService();
             HomeController.VideoPlayEvent += OnVideoPlay;
             GroupController.VideoCallBackEvent += OnVideoCallBack;
+            
             this.Loaded += this.MainWindow_Loaded;
         }
 
@@ -131,13 +138,16 @@ namespace VideoPlayerForWpf
         /// <param name="e"></param>
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            this.workAreaHeight = SystemParameters.PrimaryScreenHeight - 80;
+
             var rootVideo = _videoListService.GetVideoList();
+            
             if (!(rootVideo == null))
             {
 
             }
 
-            Minimized();
+            // Minimized();
 
             this.monitorEntities = this.monitorDatasService.LoadMonitorDatas();
 
@@ -196,8 +206,8 @@ namespace VideoPlayerForWpf
             // 清理行定义
             this.gridContainer.RowDefinitions.Clear();
 
-            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
-            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(this.workAreaHeight * 0.6, GridUnitType.Pixel) });
+            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(this.workAreaHeight * 0.4, GridUnitType.Pixel) });
 
             var main = CreateMonitorUnit(0, 0, 0, 3);
 
@@ -217,10 +227,9 @@ namespace VideoPlayerForWpf
             // 清理行定义
             this.gridContainer.RowDefinitions.Clear();
 
-
-            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(this.workAreaHeight / 3, GridUnitType.Pixel) });
+            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(this.workAreaHeight / 3, GridUnitType.Pixel) });
+            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(this.workAreaHeight / 3, GridUnitType.Pixel) });
 
             var main = CreateMonitorUnit(0, 0, 0, 2, 2);
 
@@ -244,10 +253,10 @@ namespace VideoPlayerForWpf
             this.gridContainer.RowDefinitions.Clear();
 
 
-            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(this.workAreaHeight * 0.3, GridUnitType.Pixel) });
+            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(this.workAreaHeight * 0.3, GridUnitType.Pixel) });
+            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(this.workAreaHeight * 0.3, GridUnitType.Pixel) });
+            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(this.workAreaHeight * 0.3, GridUnitType.Pixel) });
 
             var main = CreateMonitorUnit(0, 0, 0, 2, 2);
 
@@ -274,13 +283,13 @@ namespace VideoPlayerForWpf
             // 清理行定义
             this.gridContainer.RowDefinitions.Clear();
 
-            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(this.workAreaHeight * 0.2, GridUnitType.Pixel) });
+            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(this.workAreaHeight * 0.2, GridUnitType.Pixel) });
+            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(this.workAreaHeight * 0.2, GridUnitType.Pixel) });
+            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(this.workAreaHeight * 0.3, GridUnitType.Pixel) });
+            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(this.workAreaHeight * 0.3, GridUnitType.Pixel) });
+            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(this.workAreaHeight * 0.3, GridUnitType.Pixel) });
+            this.gridContainer.RowDefinitions.Add(new RowDefinition { Height = new GridLength(this.workAreaHeight * 0.3, GridUnitType.Pixel) });
 
             var main = CreateMonitorUnit(0, 0, 0, 2, 3);
 
